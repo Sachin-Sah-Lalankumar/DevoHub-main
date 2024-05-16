@@ -1,0 +1,82 @@
+main > h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: end;
+  padding-block: 30px;
+}
+
+.card {
+  position: relative;
+  width: 170px;
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+  padding: 30px 15px;
+  margin: 50px 15px;
+  transition: all ease 0.2s;
+  text-align: center;
+  cursor: pointer;
+}
+.card:hover {
+  background: var(--primary-bg);
+}
+
+.card-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.5),
+    0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-bg);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all ease 0.4s;
+}
+.card:hover .card-image img {
+  scale: 1.4;
+}
+
+.card p {
+  letter-spacing: 0.5px;
+  color: var(--secondary-txt-clr);
+  overflow: hidden;
+  width: 100%;
+}
+
+.name {
+  margin-block: 50px 7px;
+  font-size: 1.4em;
+  color: var(--primary-txt-clr);
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  overflow: hidden;
+}
+
+.card .followers {
+  margin-block: 5px 9px;
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--primary-txt-clr);
+  border-radius: 10px;
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  color: var(--secondary-bg);
+}

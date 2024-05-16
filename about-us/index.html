@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevoHub | Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../style/resets.css" />
+    <link rel="stylesheet" href="../style/nav.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div class="header-nav">
+      <div class="nav-left">
+        <span class="material-symbols-outlined menu"> menu </span>
+        <div class="logo">
+          <span class="text">DevoHub</span>
+        </div>
+      </div>
+      <label class="search-bar" for="search-box">
+        <input type="text" id="search-box" placeholder="Search" />
+        <span class="material-symbols-outlined" style="cursor: pointer">
+          search
+        </span>
+      </label>
+      <div class="nav-right">
+        <div class="theme-toggle-wrapper">
+          <div class="theme-toggle">
+            <div class="circle"></div>
+            <span class="material-symbols-outlined icon moon"> dark_mode </span>
+            <span class="material-symbols-outlined icon sun"> light_mode </span>
+          </div>
+        </div>
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img
+            id="header-nav-dp"
+            src="https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="setting-menu">
+      <div class="setting-menu-inner">
+        <div class="user-profile">
+          <img
+            id="setting-menu-dp"
+            src="https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053"
+          />
+          <div>
+            <p id="setting-menu-username">User Name</p>
+            <a href="../profile">See your profile</a>
+          </div>
+        </div>
+        <div class="user-profile feedback">
+          <span class="material-symbols-outlined"> reviews </span>
+          <div>
+            <p>Give Feedback</p>
+            <a href="../feedback">Help us to improve new design</a>
+          </div>
+        </div>
+
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> settings </span>
+          <a href="../setting"
+            >Setting & Theme
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined">contact_support</span>
+          <a href="../help"
+            >Help & Support
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <a href="../about-us"
+            >About us<span class="material-symbols-outlined">
+              chevron_right
+            </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> logout </span>
+          <a href="../log-out"
+            >Log-out
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <!-- <span class="material-symbols-outlined close-menu"> close </span> -->
+      <!-- <div class="logo"><span class="text">DevoHub</span></div> -->
+      <nav class="nav-links">
+        <a href="../home" class="nav-link">
+          <span class="material-symbols-outlined"> home </span>
+          <h4>Home</h4>
+        </a>
+        <a href="../people" class="nav-link">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <h4>People</h4>
+        </a>
+        <a href="../git-hunter" class="nav-link">
+          <span class="material-symbols-outlined"> person_search </span>
+          <h4>Git-Hunter</h4>
+        </a>
+        <a href="../forums" class="nav-link">
+          <span class="material-symbols-outlined"> forum </span>
+          <h4>Forums</h4>
+        </a>
+        <a href="../search" class="nav-link">
+          <span class="material-symbols-outlined">search</span>
+          <h4>Search</h4>
+        </a>
+        <a
+          class="nav-link"
+          style="cursor: pointer"
+          onclick="settingsMenuToggle()"
+        >
+          <span class="material-symbols-outlined"> more_up </span>
+          <h4>More</h4>
+        </a>
+        <a href="../about-us" class="nav-link active">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <h4>About us</h4>
+        </a>
+        <a href="../profile" class="nav-link">
+          <span class="material-symbols-outlined"> account_circle </span>
+          <h4>You</h4>
+        </a>
+        <a href="../log-out" class="nav-link">
+          <span class="material-symbols-outlined"> logout </span>
+          <h4>Log-out</h4>
+        </a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="about-section">
+        <div class="about-left">
+          <img src="../assets/raunak.jpg" alt="About Img" />
+        </div>
+
+        <div class="about-right">
+          <h1>Raunak Tiwari</h1>
+          <p>I'm a self taught Web-developer.</p>
+          <div class="email">
+            <a href="mailto:raunak7t@gmail.com">
+              <span class="material-symbols-outlined"> mail </span>
+              <p>raunak7t@gmail.com</p>
+            </a>
+          </div>
+          <div class="expertise">
+            <h3>My Expertise</h3>
+            <ul>
+              <li><p>HTML</p></li>
+              <li><p>CSS</p></li>
+              <li><p>JS</p></li>
+              <li><p>Firebase</p></li>
+              <li><p>React JS</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="about-section">
+        <div class="about-left">
+          <img src="../assets/sachin.png" alt="About Img" />
+        </div>
+
+        <div class="about-right">
+          <h1>Sachin Sah</h1>
+          <p>
+            I'm a Web-developer with enhanced skills of frontend technologies.
+          </p>
+          <div class="email">
+            <a href="mailto:raunak7t@gmail.com">
+              <span class="material-symbols-outlined"> mail </span>
+              <p>sahsachin677@gmail.com</p>
+            </a>
+          </div>
+          <div class="expertise">
+            <h3>My Expertise</h3>
+            <ul>
+              <li><p>HTML</p></li>
+              <li><p>CSS</p></li>
+              <li><p>JS</p></li>
+              <li><p>Firebase</p></li>
+              <li><p>React JS</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="about-section">
+        <div class="about-left">
+          <img src="../assets/bg-1.jpg" alt="About Img" />
+        </div>
+
+        <div class="about-right">
+          <h1>Milisha Hajare</h1>
+          <div class="email">
+            <a href="mailto:raunak7t@gmail.com">
+              <span class="material-symbols-outlined"> mail </span>
+              <p>milisha@gmail.com</p>
+            </a>
+          </div>
+          <div class="expertise">
+            <h3>My Expertise</h3>
+            <ul>
+              <li><p>HTML</p></li>
+              <li><p>CSS</p></li>
+              <li><p>JS</p></li>
+              <li><p>Firebase</p></li>
+              <li><p>React JS</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

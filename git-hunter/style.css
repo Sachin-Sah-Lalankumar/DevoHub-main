@@ -1,0 +1,107 @@
+.container {
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-block: 40px;
+  background: var(--secondary-bg);
+  overflow-y: auto;
+  border: 10px solid var(--secondary-bg);
+}
+
+.user-form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.user-form input {
+  width: 100%;
+  display: block;
+  background-color: var(--primary-bg);
+  border: 1px solid var(--accent-clr-2);
+  border-radius: 18px;
+  color: var(--primary-txt);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.user-form input::placeholder {
+  color: var(--secondary-txt);
+}
+
+.user-form input:focus {
+  outline: color(srgb 0 0 rgb(161, 161, 242));
+}
+
+.card {
+  max-width: 800px;
+  background-color: var(--primary-bg);
+  border-radius: 20px;
+  border: 1px solid var(--accent-clr-2);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  /* that's useful in case of minimizing the window */
+  padding: 3rem;
+  margin: 0 1.5rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 10px solid var(--accent-clr);
+  height: 150px;
+  width: 150px;
+}
+
+.user-info {
+  color: var(--primary-txt);
+  margin-left: 2rem;
+}
+
+.user-info h2 {
+  margin: 10px 0;
+}
+
+.user-info ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 10px;
+  max-width: 400px;
+}
+
+.user-info ul li {
+  display: flex;
+  align-items: center;
+}
+
+.user-info ul li strong {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* Styling repo now */
+.repo,
+.goto {
+  text-decoration: none;
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  color: var(--secondary-bg);
+  border: 1px solid var(--accent-clr);
+  border-radius: 10px;
+  padding: 5px 23px;
+  margin: 10px;
+  display: inline-block;
+}
+.goto {
+  font-size: 0.5rem;
+}

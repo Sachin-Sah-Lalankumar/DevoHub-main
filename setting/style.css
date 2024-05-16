@@ -1,0 +1,33 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 30px 0;
+  padding-right: 150px;
+}
+
+.theme-card {
+  background-color: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding-inline: 100px;
+  padding-block: 40px 70px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 25px -15px var(--accent-clr),
+    -8px -8px 25px -15px var(--accent-clr-2);
+  border: 1px solid var(--secondary-txt-clr);
+  transition: all ease 0.2s;
+  pointer-events: none;
+}
+.theme-card:hover {
+  background-color: var(--primary-bg);
+}
+
+.theme-card .theme-toggle-wrapper {
+  pointer-events: all;
+  scale: 3;
+}

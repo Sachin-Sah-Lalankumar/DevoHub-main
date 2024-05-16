@@ -1,0 +1,325 @@
+main {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+.left {
+  width: 69%;
+  overflow-x: hidden;
+  padding: 10px;
+}
+.left::-webkit-scrollbar {
+  display: none;
+}
+
+.post {
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+  padding-block: 1px;
+  box-shadow: -2px 2px 8px #0004;
+  position: relative;
+  overflow: hidden;
+}
+.post .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+.top-bar .user-profile {
+  cursor: pointer;
+}
+.top-bar .user-profile img {
+  height: 35px;
+  width: 35px;
+}
+.top-bar .dele-and-cate {
+  display: flex;
+  gap: 15px;
+}
+.top-bar .delete,
+.top-bar .category {
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-txt-clr);
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  color: var(--secondary-bg);
+}
+.top-bar .delete {
+  background: red;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+.post .main {
+  position: relative;
+}
+.post .img-container {
+  background-image: linear-gradient(20deg, #dd61ff60, #6098ff60),
+    url(https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053);
+  background-position: center;
+  background-size: cover;
+  height: 25vw;
+  width: 95%;
+}
+.img-container img {
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.post .interactions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(to right, #00000000, var(--secondary-bg) 48%);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  z-index: 10;
+}
+.interactions > div {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.interactions span {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.like.liked .n-span {
+  display: none;
+}
+.like.liked .l-span {
+  display: inline;
+}
+span.l-span {
+  display: none;
+  color: rgb(255, 36, 109);
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+.post .bottom {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.post .bottom h4 {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post .bottom h5 {
+  border-bottom: 1px solid var(--accent-clr);
+  color: var(--accent-clr-2);
+  cursor: pointer;
+  margin-right: 20px;
+}
+.post .more-info {
+  background: var(--secondary-bg);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  overflow-y: scroll;
+  direction: rtl;
+  padding-inline: 70px 10px;
+  transition: all ease 0.4s;
+  line-height: 150%;
+}
+.post .more-info.active {
+  height: calc(100% - 45px);
+}
+.more-info::-webkit-scrollbar {
+  width: 29px;
+  border: 7px solid var(--secondary-bg);
+  border-radius: 50px;
+}
+.more-info::-webkit-scrollbar-thumb {
+  border-left: 7px solid var(--secondary-bg);
+  border-right: 7px solid var(--secondary-bg);
+  box-shadow: inset 0 0 0px 4px var(--primary-bg);
+}
+.more-info > div {
+  text-align: right;
+  margin-block: 20px 10px;
+}
+.more-info > div span {
+  cursor: pointer;
+  scale: 1.5;
+}
+.more-info h3 {
+  padding: 5px;
+}
+.more-info p {
+  padding: 10px 20px;
+}
+.more-info * {
+  direction: initial;
+}
+
+.left .add-comment {
+  margin: 19px 4px;
+  padding: 7px;
+  background-color: var(--primary-bg);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: -2px 2px 8px #0004;
+}
+.add-comment input {
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  border: none;
+  background: var(--primary-bg);
+  color: var(--primary-txt-clr);
+  padding-inline: 13px;
+  outline: none;
+}
+.add-comment input::placeholder {
+  color: var(--secondary-txt-clr);
+}
+.add-comment .send-btn {
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  border-radius: 30px;
+  color: var(--secondary-bg);
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 30px;
+}
+
+.left > h2 {
+  margin-block: 10px;
+}
+
+.all-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.comment-card {
+  background-color: var(--secondary-bg);
+  padding: 10px;
+  /* width: 50%; */
+  width: calc(50% - 20px);
+  overflow: hidden;
+  box-shadow: -2px 2px 8px #0004;
+  border-radius: 8px;
+}
+.comment-card .comment-text {
+  margin: 10px;
+}
+
+.right {
+  padding: 8px 12px;
+  width: 22%;
+  height: calc(100vh - 70px);
+  position: fixed;
+  right: 4vw;
+  overflow-y: scroll;
+}
+.right > h3 {
+  margin-bottom: 20px;
+}
+.post-container {
+  margin-bottom: 15px;
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  color: var(--primary-txt-clr);
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  box-shadow: -2px 2px 8px #0004;
+}
+.post-container * {
+  transition: all ease 0.3s;
+}
+.post-container .top-row {
+  width: 100%;
+  padding: 4px 8px;
+  padding-bottom: 20px;
+  position: absolute;
+  background: linear-gradient(var(--secondary-bg) 10px, transparent);
+  z-index: 10;
+}
+.dp-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  flex-shrink: 0;
+}
+.dp-name img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+.post-container .main-img {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.post-container .down-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 4px 8px;
+}
+.down-row .title {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.down-row .likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.likes.liked .n-span {
+  display: none;
+}
+.likes.liked .l-span {
+  display: inline;
+}
+.likes span.l-span {
+  display: none;
+  color: rgb(255, 36, 109);
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+
+.post-container:hover {
+  background: var(--primary-bg);
+}
+.post-container:hover .main-img img {
+  object-position: center;
+  scale: 1.2;
+}

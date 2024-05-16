@@ -1,0 +1,61 @@
+main > h1 {
+  margin: 15px;
+  font-size: 3rem;
+}
+
+.main-container {
+  margin-block: 40px;
+  margin-inline: 4vw 8vw;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.main-container .block {
+  font-size: 400%;
+  background-color: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 70px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 25px -15px var(--accent-clr),
+    -8px -8px 25px -15px var(--accent-clr-2);
+  border: 1px solid var(--secondary-txt-clr);
+  transition: all ease 0.2s;
+  pointer-events: none;
+}
+.block:hover {
+  background-color: var(--primary-bg);
+}
+.main-container h1,
+.main-container h6 {
+  text-align: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    135deg,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+}
+.main-container h6 {
+  opacity: 0.8;
+}
+.main-container .btn {
+  pointer-events: all;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  color: var(--secondary-bg);
+  padding: 7px 30px;
+  border: 1px solid var(--primary-txt-clr);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}

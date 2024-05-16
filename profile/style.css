@@ -1,0 +1,438 @@
+main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.portfolio-btn {
+  height: 87%;
+  width: 10%;
+  background: linear-gradient(-65deg, var(--accent-clr), var(--accent-clr-2));
+  position: fixed;
+  right: 4vw;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.portfolio-btn > h1 {
+  rotate: 90deg;
+  white-space: nowrap;
+  transform: translatex(43%);
+  font-size: 3.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--secondary-bg);
+}
+
+.main-pcon {
+  width: 85%;
+}
+
+.profile-interacts {
+  margin-block: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: -13px;
+  z-index: 10;
+  background: var(--tertiary-bg);
+  padding-block: 8px 15px;
+  overflow: auto;
+}
+
+.btn {
+  width: 100%;
+  background: var(--primary-bg);
+  padding: 7px 30px;
+  border: 1px solid var(--primary-txt-clr);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.2s;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+.btn.styled {
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  color: var(--secondary-bg);
+}
+.save-btn,
+.edit-btn,
+.follow-btn,
+.share-btn {
+  width: fit-content;
+}
+.editable .save-btn {
+  display: flex;
+}
+.save-btn,
+.editable .edit-btn {
+  display: none;
+}
+.follow-btn.followed {
+  background: var(--primary-bg);
+  color: var(--primary-txt-clr);
+}
+.follow-btn .unf-text,
+.followed .f-text {
+  display: none;
+}
+.followed .unf-text {
+  display: initial;
+}
+
+.delete-btn {
+  text-align: center;
+  background: red;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  display: none;
+}
+.delete-btn span {
+  font-size: 3rem;
+}
+
+.profile-container {
+  background: var(--secondary-bg);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 5rem;
+  position: relative;
+}
+
+.profile {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+.group-1,
+.group-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.group-3 {
+  width: 100%;
+  grid-column: 1/-1;
+  border-top: 1px solid var(--accent-clr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.group-3 .items {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.profile-container .title {
+  color: var(--accent-clr-2);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.profile-container .input-field {
+  background: transparent;
+  border: none;
+  display: block;
+  font-size: 1.1rem;
+  color: var(--primary-txt-clr);
+  width: 100%;
+}
+.input-field::placeholder {
+  color: var(--secondary-txt-clr);
+  opacity: 0;
+}
+.editable .input-field::placeholder {
+  opacity: 0.5;
+}
+.editable .input-field {
+  background: var(--primary-bg);
+  border: 1px solid var(--secondary-txt-clr);
+  border-radius: 7px;
+  margin: 5px !important;
+  padding: 3px;
+}
+
+.profile-container .desc {
+  font-weight: 400;
+  color: var(--secondary-txt-clr);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  resize: none;
+  height: 4rem;
+  width: 100%;
+  margin-top: 7px;
+}
+.profile-container .sub-desc {
+  height: initial;
+  margin-bottom: 10px;
+}
+
+/* profile */
+
+.profile_container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.profile-img {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent-clr);
+  overflow: hidden;
+  position: relative;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.profile-img label span {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background: var(--primary-bg);
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.editable .profile-img label span {
+  display: block;
+}
+.profile-img #upload-profile-img {
+  display: none;
+}
+
+.profile-container .profile_name_lastName {
+  color: var(--primary-txt-clr);
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: -0.7rem;
+}
+.profile-container .profile_name_firstName {
+  color: var(--accent-clr-2);
+  font-weight: 700;
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  display: block;
+}
+.profile-container .profile-title {
+  color: var(--primary-txt-clr);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 5rem;
+}
+
+.field-box {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--accent-clr);
+}
+
+.info {
+  margin: 1rem;
+}
+ul.info {
+  margin-left: 2rem;
+}
+
+.group-3 .input-field {
+  width: 40%;
+  text-align: right;
+}
+
+.portfolio-container,
+.posts-container {
+  height: 91%;
+  width: 0%;
+  background: linear-gradient(-65deg, var(--accent-clr), var(--accent-clr-2));
+  position: fixed;
+  border-radius: 1rem;
+  top: 50px;
+  right: 4vw;
+  overflow: hidden;
+  z-index: 20;
+  transition: all ease 0.5s;
+}
+.portfolio-container.active,
+.posts-container.active {
+  width: 76%;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--primary-bg);
+  padding: 10px;
+  border-radius: 50%;
+  border-top-right-radius: 0;
+  cursor: pointer;
+}
+
+.portfolio-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* posts */
+
+.posts-container {
+  background: var(--tertiary-bg);
+  height: 92%;
+  overflow-y: auto;
+}
+.posts-container > h1 {
+  padding: 30px 20px 0 20px;
+}
+
+.posts {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+}
+
+.post-container {
+  width: 30%;
+  background: var(--secondary-bg);
+  border-radius: 10px;
+  color: var(--primary-txt-clr);
+  box-shadow: -2px 2px 8px #0004;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.post-container * {
+  transition: all ease 0.3s;
+}
+.post-container .top-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 8px;
+  padding-bottom: 20px;
+  position: absolute;
+  background: linear-gradient(var(--secondary-bg) 10px, transparent);
+  z-index: 10;
+}
+.top-row .dp-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  flex-shrink: 0;
+}
+.top-row .dp-name img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+
+.category {
+  flex-shrink: 0;
+  background: var(--primary-bg);
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-txt-clr);
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.category:hover {
+  opacity: 0.5;
+}
+.category.active {
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  color: var(--secondary-bg);
+  font-weight: 700;
+}
+
+.post-container .main-img {
+  margin-top: 10px;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.post-container .down-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 8px;
+}
+.down-row .title {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.down-row .likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.likes.liked .n-span {
+  display: none;
+}
+.likes.liked .l-span {
+  display: inline;
+}
+.likes span.l-span {
+  display: none;
+  color: rgb(255, 36, 109);
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+
+.post-container:hover {
+  background: var(--primary-bg);
+}
+.post-container:hover .category {
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  color: var(--secondary-bg);
+  font-weight: 700;
+}
+.post-container:hover .main-img img {
+  object-position: center;
+  scale: 1.2;
+}
